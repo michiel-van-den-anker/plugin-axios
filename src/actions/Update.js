@@ -1,4 +1,4 @@
-import merge from 'lodash/merge';
+import merge from 'lodash-es/merge';
 import Axios from '../orm/axios';
 import Action from './Action'
 import Context from '../common/context'

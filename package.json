@@ -32,7 +32,7 @@
   "dependencies": {
     "@vuex-orm/core": "^0.31.6",
     "axios": "^0.18.0",
-    "lodash": "^4.17.11"
+    "lodash-es": "^4.17.11"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

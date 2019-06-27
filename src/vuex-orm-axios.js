@@ -1,4 +1,4 @@
-import map from 'lodash/map';
+import map from 'lodash-es/map';
 import Context from './common/context';
 import Action from './actions/Action'
 import Fetch from './actions/Fetch'

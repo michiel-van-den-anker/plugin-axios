@@ -1,5 +1,5 @@
-import merge from 'lodash/merge'
-import find from 'lodash/find'
+import merge from 'lodash-es/merge';
+import find from 'lodash-es/find';
 import { VuexOrmPluginConfig } from '../support/interfaces';
 
 export default class Context {

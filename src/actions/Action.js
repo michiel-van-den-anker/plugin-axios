@@ -1,7 +1,7 @@
-import forEach from 'lodash/forEach';
-import has from 'lodash/has';
-import map from 'lodash/map';
-import merge from 'lodash/merge';
+import forEach from 'lodash-es/forEach';
+import has from 'lodash-es/has';
+import map from 'lodash-es/map';
+import merge from 'lodash-es/merge';
 import Context from '../common/context';
 import { ModuleConfig, ModelConfig } from '../support/interfaces';
 
