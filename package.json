@@ -1,6 +1,6 @@
 {
   "name": "@michielvdanker/plugin-axios",
-  "version": "0.5.1",
+  "version": "1.5.1",
   "description": "Vuex-ORM Plugin to sync the data against a RESTful API.",
   "main": "dist/index.js",
   "scripts": {
