@@ -2,6 +2,7 @@ import forEach from 'lodash-es/forEach';
 import has from 'lodash-es/has';
 import map from 'lodash-es/map';
 import merge from 'lodash-es/merge';
+import flatten from 'lodash-es/flatten';
 import Context from '../common/context';
 import { ModuleConfig, ModelConfig } from '../support/interfaces';
 
@@ -58,11 +59,20 @@ export default class Action {
       const paramValue = has(config.params, param.replace(':', '')) ? config.params[param.replace(':', '')] : '';
       endpoint = endpoint.replace(param, paramValue).replace('//', '/');
     });
-    if (config.query) endpoint += `?${Object.keys(config.query).map(k => `${encodeURIComponent(k)}=${encodeURIComponent(config.query[k])}`).join('&')}`;
+    if (config.query) {
+      // Map the keys, flatten and join
+      endpoint += `?${flatten(Object.keys(config.query).map((k) => {
+        const value = config.query[k];
+        if (Array.isArray(value)) {
+          return value.map(v => `${encodeURIComponent(k)}[]=${encodeURIComponent(v)}`);
+        }
+        return `${encodeURIComponent(k)}=${encodeURIComponent(config.query[k])}`;
+      })).join('&')}`;
+    }
     return endpoint;
   }
 
-   /**
+  /**
    * Get appropriate methods
    * @param {string} type
    * @param {object} model
