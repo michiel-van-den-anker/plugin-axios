@@ -30,7 +30,7 @@
     }
   },
   "dependencies": {
-    "@vuex-orm/core": "^0.31.6",
+    "@vuex-orm/core": "^0.31.13",
     "axios": "^0.18.0",
     "lodash-es": "^4.17.11"
   },
